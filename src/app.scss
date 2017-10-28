@@ -99,12 +99,6 @@ body {
 	background: rgba(255, 255, 255, .5);
 }
 
-::-webkit-input-placeholder { color: #494848; }
-:-moz-placeholder { color: #494848; }
-::-moz-placeholder { color: #494848; }
-:-ms-input-placeholder { color: #494848; }
-
-
 .notification {
     opacity: 0;
     position: absolute;
@@ -166,5 +160,41 @@ body {
 
     .status-value {
         text-align: left;
+    }
+}
+
+.wrapper[data-theme="light"] {
+
+    ::-webkit-input-placeholder { color: #494848; }
+    :-moz-placeholder { color: #494848; }
+    ::-moz-placeholder { color: #494848; }
+    :-ms-input-placeholder { color: #494848; }
+}
+
+
+.wrapper[data-theme="dark"] {
+
+    ::-webkit-input-placeholder { color: #FFF; }
+    :-moz-placeholder { color: #FFF; }
+    ::-moz-placeholder { color: #FFF; }
+    :-ms-input-placeholder { color: #FFF; }
+
+    #search {
+        background: rgba(0, 0, 0, .3);
+        color: #FFF;
+
+        &:focus {
+            background: rgba(0, 0, 0, .5);
+        }
+    }
+
+    #status-wrapper {
+        .status-item {
+            .status-key,
+            .status-value {
+                color: #8d8d8d;
+                background: rgba(0, 0, 0, .3);
+            }
+        }
     }
 }

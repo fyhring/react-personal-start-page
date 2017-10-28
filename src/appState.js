@@ -8,6 +8,9 @@ const appState = observable({
     // DOM link element which can be used to open new tabs.
     linkElement: null,
 
+    // DOM image element to pre-load background images.
+    imageElement: null,
+
     // Contains the command that are awaiting further input.
     awaitingCommand: null,
 
@@ -23,7 +26,13 @@ const appState = observable({
     commander: null,
 
     // List of all notifications. Push new ones to this to make them appear.
-    notifications: []
+    notifications: [],
+
+    // Contains the current tick object. Which includes a date.
+    tick: null,
+
+    // Contains the current theme.
+    theme: 'light'
 
 });
 

@@ -48,19 +48,9 @@ export default class Notification extends React.Component
     {
         const { message, sender, level, time, index } = this.props;
 
-        // Both states must be rendered in order for the animation to work.
-        if (!this.state.show) {
-            return (
-                <div className="notification">
-                    {message}
-                    <span className="close">&times;</span>
-                </div>
-            )
-        }
-
         // Note this notification has the class `shown` which makes this visible to the user.
         return (
-            <div className="notification shown" style={{ zIndex: 900 + index}}>
+            <div className={ this.state.show ? 'notification shown' : 'notification' } style={{ zIndex: 900 + index}}>
                 {message}
                 <span className="close" onClick={this.onClose}>&times;</span>
             </div>

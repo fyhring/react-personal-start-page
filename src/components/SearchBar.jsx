@@ -6,6 +6,7 @@ import appState from '../appState';
 export default class SearchBar extends React.Component
 {
     defaultPlaceholder = 'Smart Search..';
+    searchElement = null;
 
     state = {
         inputValue: '',
@@ -82,8 +83,14 @@ export default class SearchBar extends React.Component
                     value={this.state.inputValue}
                     onChange={this.onInput}
                     onKeyPress={this.readInput}
+                    ref={ searchElement => this.searchElement = searchElement }
                 />
             </div>
         );
+    }
+
+    componentDidMount()
+    {
+        this.searchElement.select();
     }
 }
